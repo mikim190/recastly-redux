@@ -15,3 +15,7 @@ var rootReducer = combineReducers({ currentVideo: currentVideoReducer, videoList
 //  listed above.
 
 export default rootReducer;
+
+
+//currentVideoReducer ->return new state {videos: [array (new videolists)], video: {newNideo}}
+//

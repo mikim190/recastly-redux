@@ -1,41 +1,40 @@
 import React from 'react';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
+import VideoPlayerContainer from '../containers/VideoPlayerContainer.js'
 import Search from './Search.js';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      videos: [],
-      video: null
-    };
+  //   this.state = {
+  //     videos: [],
+  //     video: null
+  //   };
 
-    this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
-  }
+  //   this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
+  // }
 
-  componentDidMount() {
-    this.getYouTubeVideos('react tutorials');
-  }
+  // componentDidMount() {
+  //   this.getYouTubeVideos('react tutorials');
+  // }
 
-  handleVideoListEntryTitleClick(video) {
-    this.setState({ video: video });
-  }
 
-  getYouTubeVideos(query) {
-    var options = {
-      key: this.props.API_KEY,
-      query: query
-    };
 
-    this.props.searchYouTube(options, (videos) =>
-      this.setState({
-        videos: videos,
-        video: videos[0]
-      })
-    );
-  }
+  // getYouTubeVideos(query) {
+  //   var options = {
+  //     key: this.props.API_KEY,
+  //     query: query
+  //   };
+
+  //   this.props.searchYouTube(options, (videos) =>
+  //     this.setState({
+  //       videos: videos,
+  //       video: videos[0]
+  //     })
+  //   );
+  // }
 
   //TODO: swap out the React components below for the container components
   //  you wrote in the 'containers' directory.
@@ -49,7 +48,7 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={this.state.video} />
+            <VideoPlayer />
           </div>
           <div className="col-md-5">
             <VideoList
@@ -64,3 +63,6 @@ class App extends React.Component {
 }
 
 export default App;
+
+//OLD VIDEO PLAYER HTML IN RENDER()
+{/* <VideoPlayer video={this.state.video} /> */ }

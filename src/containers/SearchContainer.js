@@ -4,22 +4,24 @@ import handleVideoSearch from '../actions/search.js';
 import VideoListContainer from './VideoListContainer.js';
 import VideoPlayerContainer from './VideoPlayerContainer.js';
 
-var SearchContainer = () => {
+// var SearchContainer = () => {
 
-  // do these two callbacks need to return?
-  const mapStateToProps = (state) => {
-    VideoListContainer.mapStateToProps(state);
-    VideoPlayerContainer.mapStateToProps(state);
+//   // do these two callbacks need to return?
+
+
+// };
+
+const mapStateToProps = (state) => {
+  VideoListContainer.mapStateToProps(state);
+  VideoPlayerContainer.mapStateToProps(state);
+}
+
+const mapDispatchToProps = (dispatch) => {
+  //const currentSearch = state.value;
+  return {
+    getVideoList: (currentSearch) => dispatch(handleVideoSearch(currentSearch))
   }
-
-  const mapDispatchToProps = (dispatch) => {
-    //const currentSearch = state.value;
-    return {
-      getVideoList: (currentSearch) => dispatch(handleVideoSearch(currentSearch))
-    }
-  }
-
-};
+}
 
 //TODO: define a SearchContainer component which will hook up your action
 // dispatchers with your search component props.
